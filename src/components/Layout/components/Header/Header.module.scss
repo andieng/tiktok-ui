@@ -56,7 +56,7 @@
     input {
         width: 100%;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1.6rem;
         line-height: 21px;
         letter-spacing: 0.3px;
         background: transparent;
@@ -64,10 +64,20 @@
         color: var(--text-color);
         caret-color: var(--primary);
     }
+}
 
-    input:not(:placeholder-shown) ~ {
-        background-color: red;
-    }
+.search-result {
+    width: 500px;
+}
+
+.search-title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    line-height: 18px;
+    letter-spacing: 0.03px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }
 
 .icon-wrapper {

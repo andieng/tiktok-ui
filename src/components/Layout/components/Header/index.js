@@ -1,35 +1,65 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
+import Tippy from '@tippyjs/react/headless';
+
 import styles from './Header.module.scss';
-import images from '~/assets/images/svg';
-import { ClearIcon, LoadingIcon, SearchIcon } from '~/assets/images/js';
+import svg from '~/assets/images/svg';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { ClearIcon, LoadingIcon, SearchIcon } from '~/components/Icon';
+import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 
 function Header() {
+    const [searchResult, setSearchResult] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResult([1, 2, 3]);
+        }, 2000);
+    }, []);
+
     return (
-        <h2 className={cx('wrapper')}>
+        <div className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="TikTok" />
+                    <img src={svg.logo} alt="TikTok" />
                 </div>
 
                 <div className={cx('search')}>
-                    <form>
-                        <input type="text" placeholder="Search" />
-                        <div className={cx('icon-wrapper')}>
-                            <ClearIcon />
-                            <LoadingIcon />
-                        </div>
-                        <span className={cx('span-spliter')} />
-                        <button className={cx('search-btn')} type="submit">
-                            <SearchIcon />
-                        </button>
-                        {/* <div className={cx('input-border')}></div> */}
-                    </form>
+                    <Tippy
+                        interactive
+                        visible={searchResult.length > 0}
+                        render={(attrs) => (
+                            //<div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                            <PopperWrapper>
+                                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                                    <h4 className={cx('search-title')}>Accounts</h4>
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                </div>
+                            </PopperWrapper>
+                            //</div>
+                        )}
+                    >
+                        <form>
+                            <input type="text" placeholder="Search" />
+                            <div className={cx('icon-wrapper')}>
+                                <ClearIcon />
+                                <LoadingIcon />
+                            </div>
+                            <span className={cx('span-spliter')} />
+                            <button className={cx('search-btn')} type="submit">
+                                <SearchIcon />
+                            </button>
+                        </form>
+                    </Tippy>
                 </div>
                 <div>Header</div>
             </div>
-        </h2>
+        </div>
     );
 }
 

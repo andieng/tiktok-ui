@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: rgb(254, 44, 85);
-    --text-color: rgba(22, 24, 35, 1);
+    --color-primary: rgba(254, 44, 85, 1);
+    --color-secondary: rgba(255, 255, 255, 1);
+    --color-text-primary: rgba(22, 24, 35, 1);
+    --color-text-secondary: rgba(255, 255, 255, 1);
 }
 
 * {
@@ -21,7 +23,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    color: var(--text-color);
+    color: var(--color-text-primary);
 }
 
 button,
@@ -32,6 +34,5 @@ input,
 }
 
 a[href] {
-    color: var(--text-color);
     text-decoration: none;
 }

@@ -18,7 +18,7 @@
 
 .logo {
     display: flex;
-    justify-content: center;
+    min-width: 300px;
 }
 
 .search {
@@ -61,8 +61,8 @@
         letter-spacing: 0.3px;
         background: transparent;
         padding: 0;
-        color: var(--text-color);
-        caret-color: var(--primary);
+        color: var(--color-text-primary);
+        caret-color: var(--color-primary);
     }
 }
 
@@ -121,4 +121,16 @@
         background: rgba(22, 24, 35, 0.06);
         color: rgba(22, 24, 35);
     }
+}
+
+.btn-container {
+    display: flex;
+}
+
+.more-btn {
+    margin-left: 16px;
+    cursor: pointer;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
 }

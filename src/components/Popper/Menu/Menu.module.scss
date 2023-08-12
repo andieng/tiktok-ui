@@ -1,0 +1,27 @@
+.menu-list {
+    min-width: 223px;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+        display: flex;
+        align-items: center;
+        margin-top: -1px;
+        margin-right: 8px;
+    }
+
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-item {
+    width: 100%;
+    justify-content: left;
+    padding: 10px 8px 10px 16px;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}

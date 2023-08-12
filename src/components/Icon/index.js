@@ -2,3 +2,8 @@ export { default as ClearIcon } from './ClearIcon';
 export { default as LoadingIcon } from './LoadingIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as VerifiedIcon } from './VerifiedIcon';
+export { default as UploadIcon } from './UploadIcon';
+export { default as EllipsisVerticalIcon } from './EllipsisVerticalIcon';
+export { default as LanguageIcon } from './LanguageIcon';
+export { default as HelpIcon } from './HelpIcon';
+export { default as KeyboardIcon } from './KeyboardIcon';

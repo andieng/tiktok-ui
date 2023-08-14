@@ -6,6 +6,9 @@
     --color-secondary: rgba(255, 255, 255, 1);
     --color-text-primary: rgba(22, 24, 35, 1);
     --color-text-secondary: rgba(255, 255, 255, 1);
+
+    // Default layout
+    --default-layout-header-height: 60px;
 }
 
 * {
@@ -35,4 +38,27 @@ input,
 
 a[href] {
     text-decoration: none;
+}
+
+// Custom tippy tooltip
+
+body {
+    .tippy-box {
+        border-radius: 8px;
+    }
+
+    .tippy-content {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 21px;
+        letter-spacing: 0.03px;
+        background-color: rgba(84, 84, 84, 1);
+        color: var(--color-text-secondary);
+        padding: 8px;
+    }
+
+    .tippy-arrow {
+        color: rgba(0, 0, 0, 0.65);
+    }
 }

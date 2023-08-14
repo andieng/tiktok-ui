@@ -1,5 +1,6 @@
 .menu-list {
     min-width: 223px;
+    padding: 8px 0 8px 0;
 
     svg {
         width: 20px;
@@ -13,6 +14,7 @@
 
     .menu-item {
         margin-left: 0;
+        color: var(--color-text-primary);
     }
 }
 
@@ -23,5 +25,51 @@
 
     &:hover {
         background: rgba(22, 24, 35, 0.03);
+    }
+
+    &.selected {
+        background: rgba(22, 24, 35, 0.03);
+    }
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+}
+
+// Header
+.header {
+    position: relative;
+    height: 50px;
+}
+
+.back-btn {
+    background-color: transparent;
+    height: 100%;
+    cursor: pointer;
+
+    svg {
+        margin-left: 28px;
+    }
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0.03px;
+}
+
+.language-list {
+    max-height: 580px;
+    overflow-y: auto;
+    padding: 0;
+
+    .menu-item {
+        font-size: 1.4rem;
+        padding: 10px 24px;
+        font-weight: 500;
     }
 }

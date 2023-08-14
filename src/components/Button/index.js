@@ -15,6 +15,7 @@ function Button({
     extraLarge = false,
     disabled = false,
     rounded = false,
+    smallRounded = false,
     children,
     className,
     leftIcon,
@@ -50,9 +51,10 @@ function Button({
         primary,
         small,
         large,
-        primaryOutline,
-        secondaryOutline,
-        extraLarge,
+        'extra-large': extraLarge,
+        'small-rounded': smallRounded,
+        'primary-outline': primaryOutline,
+        'secondary-outline': secondaryOutline,
     });
 
     return (

@@ -55,6 +55,7 @@
 
     input {
         width: 100%;
+        font-family: 'TikTokFont', sans-serif;
         font-weight: 400;
         font-size: 1.6rem;
         line-height: 21px;
@@ -67,7 +68,8 @@
 
     input::placeholder {
         opacity: 1;
-        color: rgba(22, 24, 35, 0.75);
+        color: rgba(22, 24, 35, 0.7);
+        letter-spacing: 0.03px;
     }
 }
 

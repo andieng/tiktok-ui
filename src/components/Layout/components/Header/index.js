@@ -5,12 +5,13 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.scss';
-import svg from '~/assets/images/svg';
+import images from '~/assets/images';
 import Popper from '~/components/Popper';
 import * as Icon from '~/components/Icon';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -103,7 +104,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={svg.logo} alt="TikTok" />
+                    <img src={images.logo} alt="TikTok" />
                 </div>
 
                 <div className={cx('search')}>
@@ -161,7 +162,7 @@ function Header() {
                     )}
                     <Menu items={isLogin ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {isLogin ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1697449646661634.jpeg?x-expires=1692172800&x-signature=Qq29JfIeSaTLVVwXYeFTl%2B6gl%2Bo%3D"
                                 alt="Avatar"

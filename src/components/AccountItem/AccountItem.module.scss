@@ -3,6 +3,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    color: var(--color-text-primary);
 
     &:hover {
         background: rgba(22, 24, 35, 0.03);

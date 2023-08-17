@@ -1,4 +1,4 @@
-function ClearIcon() {
+function ClearIcon({ className }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ function ClearIcon() {
             height="16"
             fill="rgba(22, 24, 35, .34)"
             viewBox="0 0 48 48"
-            style={{ margin: '0 12px' }}
+            className={className}
         >
             <path
                 fillRule="evenodd"

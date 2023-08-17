@@ -1,4 +1,4 @@
-function LoadingIcon() {
+function LoadingIcon({ className }) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,7 @@ function LoadingIcon() {
             height="16"
             fill="rgba(22, 24, 35, .34)"
             viewBox="0 0 48 48"
-            style={{ margin: '0 12px', display: 'none' }}
+            className={className}
         >
             <path
                 fillRule="evenodd"

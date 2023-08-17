@@ -1,17 +1,14 @@
-import { useEffect, useState } from 'react';
-import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
-import HeadlessTippy from '@tippyjs/react/headless';
+import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 
-import styles from './Header.module.scss';
 import images from '~/assets/images';
-import Popper from '~/components/Popper';
-import * as Icon from '~/components/Icon';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
-import Menu from '~/components/Popper/Menu';
+import * as Icon from '~/components/Icon';
 import Image from '~/components/Image';
+import Menu from '~/components/Popper/Menu';
+import styles from './Header.module.scss';
+import Search from '~/components/Layout/components/Search';
 
 const cx = classNames.bind(styles);
 
@@ -53,14 +50,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
     const isLogin = true;
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 2000);
-    }, []);
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -107,35 +97,8 @@ function Header() {
                     <img src={images.logo} alt="TikTok" />
                 </div>
 
-                <div className={cx('search')}>
-                    <HeadlessTippy
-                        interactive
-                        visible={searchResult.length > 0}
-                        render={(attrs) => (
-                            <Popper>
-                                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                    <h4 className={cx('search-title')}>Accounts</h4>
-                                    <AccountItem />
-                                    <AccountItem />
-                                    <AccountItem />
-                                    <AccountItem />
-                                </div>
-                            </Popper>
-                        )}
-                    >
-                        <form>
-                            <input type="text" placeholder="Search" />
-                            <div className={cx('icon-wrapper')}>
-                                <Icon.ClearIcon />
-                                <Icon.LoadingIcon />
-                            </div>
-                            <span className={cx('span-spliter')} />
-                            <button className={cx('search-btn')} type="submit">
-                                <Icon.SearchIcon />
-                            </button>
-                        </form>
-                    </HeadlessTippy>
-                </div>
+                {/* Search */}
+                <Search />
 
                 <div className={cx('actions')}>
                     <Button smallRounded secondaryOutline large>

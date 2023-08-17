@@ -1,27 +1,27 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import styles from './AccountItem.module.scss';
 import { VerifiedIcon } from '~/components/Icon';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     return (
-        <div className={cx('wrapper')}>
-            <img
-                className={cx('avatar')}
-                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0094032b899e8d5a889f33adb3a828af~c5_300x300.webp?x-expires=1692003600&x-signature=o2H8tjhGyMTW7mea%2BGtKbI53tkA%3D"
-                alt="Hoaa"
-            />
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+            <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
             <div className={cx('info')}>
                 <h4 className={cx('username')}>
-                    vietphuongthoa98
-                    <span className={cx('verified-container')}>
-                        <VerifiedIcon />
-                    </span>
+                    {data.nickname}
+                    {data.tick && (
+                        <span className={cx('verified-container')}>
+                            <VerifiedIcon />
+                        </span>
+                    )}
                 </h4>
-                <p className={cx('name')}>Việt Phương Thoa</p>
+                <p className={cx('name')}>{data.full_name}</p>
             </div>
-        </div>
+        </Link>
     );
 }
 

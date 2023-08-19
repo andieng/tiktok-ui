@@ -26,7 +26,7 @@ function Search() {
         if (debouncedValue) {
             const fetchApi = async () => {
                 setLoading(true);
-                const result = await searchServices.search(debounced);
+                const result = await searchServices.search(debouncedValue);
                 setSearchResult(result);
                 setLoading(false);
             };
@@ -55,9 +55,8 @@ function Search() {
                     <Popper>
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <h4 className={cx('search-title')}>Accounts</h4>
-                            {searchResult.map((result) => (
-                                <AccountItem key={result.id} data={result} />
-                            ))}
+                            {searchResult.length > 0 &&
+                                searchResult.map((result) => <AccountItem key={result.id} data={result} />)}
                         </div>
                     </Popper>
                 )}

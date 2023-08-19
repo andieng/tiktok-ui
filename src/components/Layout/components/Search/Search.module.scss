@@ -6,6 +6,10 @@
     padding: 0 8px;
     margin: 0;
 
+    [data-tippy-root] {
+        width: calc(100% - 16px);
+    }
+
     form {
         display: flex;
         flex-direction: row;
@@ -32,7 +36,7 @@
 
     input {
         width: 100%;
-        font-family: 'TikTokFont', sans-serif;
+        font-family: var(--default-font-family);
         font-weight: 400;
         font-size: 1.6rem;
         line-height: 21px;
@@ -45,14 +49,12 @@
 
     input::placeholder {
         opacity: 1;
-        color: rgba(22, 24, 35, 0.7);
+        color: rgba(22, 24, 35, 0.68);
         letter-spacing: 0.03px;
     }
 }
 
 .search-result {
-    min-width: 200px;
-    width: 500px;
     padding: 8px 0 8px 0;
 }
 

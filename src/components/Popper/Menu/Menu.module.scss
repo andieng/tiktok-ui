@@ -17,10 +17,29 @@
     }
 }
 
+.language-list {
+    padding: 0;
+
+    .menu-item {
+        font-family: var(--TikTokDisplayFont);
+        font-weight: 500;
+        font-size: 1.4rem;
+        padding: 10px 24px;
+        letter-spacing: 0.093px;
+        line-height: 18px;
+    }
+}
+
+.menu-body {
+    max-height: min((100vh - 96px) - 60px - 50px, 734px);
+    overflow-y: auto;
+}
+
 .menu-item {
     width: 100%;
     justify-content: left;
     padding: 10px 8px 10px 16px;
+    background: transparent;
 
     &:hover {
         background: rgba(22, 24, 35, 0.03);
@@ -59,16 +78,4 @@
     font-weight: 600;
     line-height: 21px;
     letter-spacing: 0.03px;
-}
-
-.language-list {
-    max-height: 580px;
-    overflow-y: auto;
-    padding: 0;
-
-    .menu-item {
-        font-size: 1.4rem;
-        padding: 10px 24px;
-        font-weight: 500;
-    }
 }

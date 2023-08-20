@@ -44,6 +44,24 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         'language-list': current.title === 'Language',
     });
 
+    const handleBack = () => {
+        setHistory(history.slice(0, -1));
+    };
+
+    const renderResult = (attrs) => (
+        <Popper>
+            <div className={classes}>
+                {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
+                <div className={cx('menu-body')}>{renderItems()}</div>
+            </div>
+        </Popper>
+    );
+
+    // Reset to first page
+    const handleResetMenu = () => {
+        setHistory(history.slice(0, 1));
+    };
+
     return (
         <Tippy
             interactive
@@ -51,22 +69,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             delay={[0, 700]}
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            render={(attrs) => (
-                <Popper>
-                    <div className={classes}>
-                        {history.length > 1 && (
-                            <Header
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory(history.slice(0, -1));
-                                }}
-                            />
-                        )}
-                        <div className={cx('menu-body')}>{renderItems()}</div>
-                    </div>
-                </Popper>
-            )}
-            onHide={() => setHistory(history.slice(0, 1))}
+            render={renderResult}
+            onHide={handleResetMenu}
         >
             {children}
         </Tippy>

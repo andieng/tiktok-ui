@@ -1,0 +1,28 @@
+.wrapper {
+    margin-bottom: 8px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background ease-in-out 200ms;
+    color: var(--color-text-primary);
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+
+    &.active {
+        color: var(--color-primary);
+    }
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    letter-spacing: -0.028px;
+    margin-left: 8px;
+}

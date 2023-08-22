@@ -1,0 +1,105 @@
+.wrapper {
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    letter-spacing: 0.093px;
+    position: relative;
+    padding: 16px 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        height: 1px;
+        background: rgba(22, 24, 35, 0.12);
+        transform: scaleY(0.5);
+    }
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding: 0 8px;
+}
+
+.account-item {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    transition: background 200ms ease-in-out 0s;
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.img-wrapper {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    line-height: 3.2rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    flex-grow: 1;
+    margin-top: -2px;
+    height: 32px;
+}
+
+.username,
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 145px;
+}
+
+.username {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    letter-spacing: 0.03px;
+    font-weight: 700;
+    color: rgb(22, 24, 35);
+    display: flex;
+}
+
+.name {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.161px;
+    font-weight: 400;
+    color: rgba(22, 24, 35, 0.75);
+    //    padding-top: 2px;
+}
+
+.verified-container {
+    margin-left: 4px;
+    width: 14px;
+    height: 14px;
+}
+
+.more-btn {
+    color: var(--color-primary);
+    padding: 0 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.093px;
+}

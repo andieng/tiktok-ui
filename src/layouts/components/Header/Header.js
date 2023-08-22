@@ -261,14 +261,19 @@ function Header() {
                     {isLogin ? (
                         <>
                             <Tippy delay={[0, 200]} content="Messages" placement="bottom">
-                                <button className={cx('action-btn', 'message-btn')}>
-                                    <Icon.MessageIcon />
-                                </button>
+                                <div className={cx('message-container')}>
+                                    <button className={cx('message-btn')}>
+                                        <Icon.MessageIcon />
+                                    </button>
+                                </div>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
-                                <button className={cx('action-btn', 'inbox-btn')}>
-                                    <Icon.InboxIcon />
-                                </button>
+                                <div className={cx('inbox-container')}>
+                                    <button className={cx('inbox-btn')}>
+                                        <Icon.InboxIcon />
+                                    </button>
+                                    <sup className={cx('sup-badge')}>2</sup>
+                                </div>
                             </Tippy>
                         </>
                     ) : (

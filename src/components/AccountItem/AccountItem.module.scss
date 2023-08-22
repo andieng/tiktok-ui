@@ -10,16 +10,32 @@
     }
 }
 
-.avatar {
+.img-wrapper {
+    display: inline-block;
     width: 40px;
     height: 40px;
     margin-right: 12px;
+    line-height: 3.2rem;
+    overflow: hidden;
     border-radius: 50%;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .info {
-    flex: 1;
+    min-width: 0px;
+    width: 100%;
+}
+
+.username,
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .username {
@@ -27,14 +43,6 @@
     line-height: 21px;
     letter-spacing: 0.03px;
     font-weight: 600;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.verified-container {
-    margin-left: 8px;
-    vertical-align: middle;
 }
 
 .name {
@@ -43,7 +51,9 @@
     letter-spacing: 0.093px;
     color: rgba(22, 24, 35, 0.5);
     font-weight: 400;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+}
+
+.verified-container {
+    margin-left: 8px;
+    vertical-align: middle;
 }
